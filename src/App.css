@@ -1,38 +1,195 @@
+body {
+    font-family: "IBM Plex Sans"
+}
+
+.restaurant_list {
+    overflow-y: auto;
+}
+
+.restaurant_list_item {
+    display: block;
+    padding: .5em;
+
+}
+
+.restaurant_list_item:nth-child(odd) {
+    background-color: #8080801f;
+}
+
+.details {
+    margin-left: 4em;
+}
+
+.author {
+    display: flex;
+}
+
+.author_pic {
+    margin: auto .5em auto 0;
+    width: 40px;
+    height: 40px;
+}
+
+.author_name {
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.infos {
+    font-size: 13px;
+    color: grey;
+}
+
+.rating {
+    width: 100px;
+}
+
+.ratings_restaurant {
+    margin-bottom: 2em;
+}
+
+.ratings_restaurant_img {
+    width: 150px;
+}
+
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+a {
+    font-weight: bold;
+    color: #b75555 !important;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.btn {
+    border-radius: 10px;
+    border: none;
+
+}
+
+.btn-primary {
+    background-color: #fb0;
+}
+
+.btn-primary:hover {
+    background-color: #f8cb51;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: black !important;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: gray !important;
+}
+
+
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.rating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+}
+
+.rating label:last-child {
+    position: static;
+}
+
+.rating label:nth-child(1) {
+    z-index: 5;
+}
+
+.rating label:nth-child(2) {
+    z-index: 4;
+}
+
+.rating label:nth-child(3) {
+    z-index: 3;
+}
+
+.rating label:nth-child(4) {
+    z-index: 2;
+}
+
+.rating label:nth-child(5) {
+    z-index: 1;
+}
+
+.rating label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.rating label .icon {
+    color: transparent;
+}
+
+.rating label:last-child .icon {
+    color: grey;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+    color: #fb0;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+    color: grey;
+    text-shadow: 0 0 5px #fb0;
 }
